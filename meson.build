@@ -127,7 +127,7 @@ foreach custom_subproj: get_option('custom_subprojects').split(',')
     endif
 endforeach
 
-message('Building subprojects: ' + ', '.join(subprojects_names))
+message('*** Building subprojects: ' + ', '.join(subprojects_names))
 
 setenv = find_program('gst-uninstalled.py')
 
