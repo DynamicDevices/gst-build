@@ -130,10 +130,23 @@ endforeach
 message('Building subprojects: ' + ', '.join(subprojects_names))
 
 setenv = find_program('gst-uninstalled.py')
+
+message('Found gst-uninstalled')
+
 run_target('uninstalled', command : [setenv, '--builddir=@0@'.format(meson.build_root()),
 	   '--srcdir=@0@'.format(meson.source_root())])
 
+message('Ran uninstalled')
+
 update = find_program('git-update')
+
+message('Found git-update')
+
 run_target('git-update', command : [update])
+
+message('Ran git-update')
+
 run_target('update', command : [update,
     '--builddir=@0@'.format(meson.current_build_dir())])
+
+message('Ran update')
